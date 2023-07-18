@@ -1,18 +1,18 @@
 import React from "react";
-import { CircularProgress, IconButton } from "@mui/material";
+import { CircularProgress, IconButton, LinearProgress } from "@mui/material";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { yellow } from "@mui/material/colors";
 
 const CountDownIcon = (props) => {
   const [countdown, setCountdown] = React.useState(100);
+  const size = 10;
 
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCountdown((prevCountdown) => {
         const decrement = 2;
         const newVal = prevCountdown - decrement;
-        // console.debug("newVal", newVal);
         if (newVal < 0) {
           clearInterval(interval);
           return 0;
@@ -31,23 +31,21 @@ const CountDownIcon = (props) => {
       props.rollback();
   }, [countdown]);
 
-  // if (countdown === 0) return null;
-
   return (
     <React.Fragment>
       <HelpOutlineIcon />
       <CircularProgress
-        size={props.children.size}
+        size={size}
         value={countdown}
         variant="determinate"
-        thickness={21}
+        thickness={size * 2}
         sx={{
-          opacity: 0.5,
-          color: yellow[900],
+          opacity: 0.7,
+          color: yellow[600],
           position: "absolute",
-          top: 0,
-          left: 0,
-          zIndex: 1
+          bottom: 5,
+          right: 5,
+          zIndex: 1,
         }}
       />
     </React.Fragment>
@@ -84,7 +82,6 @@ const ConfirmButtonIcon = (props) => {
         }}
       >
         <CountDownIcon
-          {...props}
           rollback={() => {
             setCurrentComponent(replacementComponent);
           }}
@@ -97,9 +94,8 @@ const ConfirmButtonIcon = (props) => {
     <IconButton {...props} onClick={onClickOverride} />
   );
 
-  const [currentComponent, setCurrentComponent] = React.useState(
-    replacementComponent
-  );
+  const [currentComponent, setCurrentComponent] =
+    React.useState(replacementComponent);
 
   return currentComponent;
 };
