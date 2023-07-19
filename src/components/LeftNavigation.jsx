@@ -16,7 +16,7 @@ import ButtonWithHoldPage from "./ButtonWithHoldPage";
 export const sections = [
   {
     path: "/",
-    name: "Home",
+    name: "Homes",
     icon: HomeIcon,
     component: WelcomePage,
   },

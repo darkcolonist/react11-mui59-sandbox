@@ -1,22 +1,26 @@
 import React from "react";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import ConfirmButtonIcon from "./ConfirmButtonIcon";
+import HoldButtonIcon from "./HoldButtonIcon";
+import { Typography } from "@mui/material";
 
 export default function () {
+  const [message, setMessage] = React.useState("ready");
+
   const handleHeavyAction = () => {
-    alert("deleted forever");
+    setMessage("deleted");
   };
   return (
     <React.Fragment>
-      [show...]
       Unrecoverable action:&nbsp;
-      <ConfirmButtonIcon
+      <HoldButtonIcon
         aria-label="heavy action"
         color="error"
         onClick={handleHeavyAction}
+        timeout={2000}
       >
         <DeleteForeverIcon />
-      </ConfirmButtonIcon>
+      </HoldButtonIcon>
+      <Typography>{message}</Typography>
     </React.Fragment>
   );
 }
