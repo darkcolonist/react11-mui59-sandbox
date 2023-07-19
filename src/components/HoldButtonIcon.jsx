@@ -24,6 +24,7 @@ export default (props) => {
               onMouseDown: null,
               onMouseUp: null,
               onMouseLeave: null,
+              color: "success",
             };
           }
 
