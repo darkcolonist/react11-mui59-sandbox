@@ -49,6 +49,9 @@ export default (props) => {
     onMouseDown: handleMouseDown,
     onMouseUp: handleMouseUp,
     onMouseLeave: handleMouseUp,
+    title:
+      props.title ??
+      `click and hold for ${currentTimeout / 1000} seconds to proceed`,
   };
 
   const styleProps = {
