@@ -11,7 +11,6 @@ import WelcomePage from "./WelcomePage";
 import TransitionTest from "./TransitionTest";
 import Demo1Page from "./Demo1Page";
 import ConfirmButtonPage from "./ConfirmButtonPage";
-import ButtonWithHoldPage from "./ButtonWithHoldPage";
 
 export const sections = [
   {
@@ -33,16 +32,10 @@ export const sections = [
     component: Demo1Page,
   },
   {
-    path: "/confirm-button-with-cooldown",
-    name: "Confirm Button with Cooldown",
+    path: "/confirm-button-experiments",
+    name: "Confirm Button Experiments",
     icon: BookmarkIcon,
     component: ConfirmButtonPage,
-  },
-  {
-    path: "/button-with-hold",
-    name: "Button with Hold",
-    icon: BookmarkIcon,
-    component: ButtonWithHoldPage,
   },
 ];
 
