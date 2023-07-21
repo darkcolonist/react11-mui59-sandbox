@@ -3,7 +3,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ConfirmButtonIcon from "./ConfirmButtonIcon";
 import { Typography, Paper, Stack } from "@mui/material";
 import HoldButtonIcon from "./HoldButtonIcon";
-
+import DoneIcon from "@mui/icons-material/Done";
 const MyPaper = (props) => {
   return (
     <Paper
@@ -43,6 +43,7 @@ export default function () {
             color="error"
             onClick={handleHeavyAction}
             timeout={2000}
+            doneicon={<DoneIcon color="success" />}
           >
             <DeleteForeverIcon />
           </HoldButtonIcon>
